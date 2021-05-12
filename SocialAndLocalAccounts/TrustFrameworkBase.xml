@@ -36,6 +36,12 @@
           <Pattern RegularExpression="^[a-zA-Z0-9]+[a-zA-Z0-9_-]*$" HelpText="The username you provided is not valid. It must begin with an alphabet or number and can contain alphabets, numbers and the following symbols: _ -" />
         </Restriction>
       </ClaimType>
+   
+     <ClaimType Id="estsRequestId">
+        <DisplayName>estsRequestId</DisplayName>
+        <DataType>string</DataType>
+        <AdminHelpText>stores request id from ests</AdminHelpText>
+      </ClaimType>
 
       <ClaimType Id="tenantId">
         <DisplayName>User's Object's Tenant ID</DisplayName>
@@ -538,6 +544,7 @@
             <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
             <OutputClaim ClaimTypeReferenceId="userPrincipalName" PartnerClaimType="upn" />
             <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="localAccountAuthentication" />
+	    <OutputClaim ClaimTypeReferenceId="estsRequestId" />
           </OutputClaims>
         </TechnicalProfile>
       </TechnicalProfiles>
